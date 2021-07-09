@@ -2,16 +2,9 @@ X = 0.04
 y = 15
 a = 5000
 
-def help(v, m):
+def loop(a, v):
 
-    i=1
-
-    while i < m:
-
-        v*=help(v, m)
-        i+=1
-
-    return v
+    return a if v<=0 else a * loop(a, v-1)
 
 
 def function1():
@@ -19,5 +12,4 @@ def function1():
     global y
     global a
 
-    return a * help((1+X), y)
-
+    return a * loop((1+X), v=y)
